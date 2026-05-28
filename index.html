@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Trần Trọng Nghĩa - Academic Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'EB Garamond', serif; font-size: 1.25rem; line-height: 1.8; color: #2c2c2c; max-width: 800px; margin: 0 auto; padding: 60px 20px; background-color: #FCFCFC; }
+        header { margin-bottom: 70px; }
+        .header-title { display: flex; align-items: center; margin-bottom: 30px; }
+        .header-title img { border-radius: 50%; width: 75px; height: 75px; object-fit: cover; margin-right: 20px; }
+        .header-title-text { font-family: 'Inter', sans-serif; font-size: 1.3em; color: #111; }
+        .header-title-text strong { font-weight: 700; }
+        .header-title-subtitle { font-family: 'EB Garamond', serif; font-size: 0.9em; color: #666; margin-left: 10px; font-style: italic; }
+        .header-title a { text-decoration: none; color: inherit; display: flex; align-items: center; }
+        nav { font-family: 'Inter', sans-serif; border-bottom: 1px solid #e0e0e0; padding-bottom: 15px; display: flex; gap: 25px; align-items: center; }
+        nav a { text-decoration: none; color: #0077b6; font-weight: 700; font-size: 1.1em; letter-spacing: -0.02em; display: flex; align-items: center; }
+        nav a:hover { color: #005f92; }
+        .svg-icon { width: 14px; height: 14px; margin-left: 5px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+        .more-icon { width: 24px; height: 24px; fill: currentColor; margin-top: 2px; cursor: pointer; }
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; background-color: #0077b6; min-width: 320px; box-shadow: 0px 10px 25px rgba(0,0,0,0.15); z-index: 1; top: 100%; left: 0; padding: 10px 0; text-align: left; }
+        .dropdown-header { color: #FFFFFF; font-weight: 800; font-size: 1.05em; padding: 12px 24px 6px 24px; display: block; }
+        .dropdown-content a { color: #FFFFFF; padding: 6px 24px; text-decoration: none; display: block; font-weight: 700; font-size: 0.95em; border: none; }
+        .dropdown-content a:hover { background-color: #005f92; color: #FFFFFF; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .post { margin-bottom: 80px; clear: both; }
+        .post h2 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 2.4em; margin-bottom: 5px; margin-top: 0; letter-spacing: -0.03em; line-height: 1.2; }
+        .post h2 a { text-decoration: none; color: #111; }
+        .post h2 a:hover { color: #0077b6; }
+        .short-hr { border: 0; border-top: 1px solid #111; width: 45px; margin: 0 0 20px 0; float: left; }
+        .short-hr::after { content: ""; clear: both; display: table; }
+        .post-content p { margin-top: 20px; margin-bottom: 20px; text-align: left; }
+        .post-meta { font-family: 'Inter', sans-serif; font-size: 0.85em; color: #555; margin-top: 25px; margin-bottom: 0; display: flex; align-items: center; gap: 15px; flex-wrap: wrap; font-weight: 400; }
+        .meta-item { display: flex; align-items: center; }
+        .meta-item a { color: #0077b6; text-decoration: none; font-weight: 700; }
+        .meta-item a:hover { text-decoration: underline; }
+        .pagination { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1em; display: flex; gap: 20px; align-items: center; margin-top: 80px; margin-bottom: 80px; }
+        .pagination a { color: #0077b6; text-decoration: none; }
+        .pagination a:hover { text-decoration: underline; }
+        .pagination .current { color: #111; }
+        .pagination .dots { color: #111; letter-spacing: 2px; }
+        .footer-widgets { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 50px; }
+        .widget h3 { font-family: 'Inter', sans-serif; font-size: 1.8em; margin-top: 0; margin-bottom: 20px; font-weight: 800; letter-spacing: -0.02em; }
+        .widget select { font-family: 'EB Garamond', serif; font-size: 1em; padding: 8px 12px; width: 80%; border: 1px solid #ccc; background-color: #FAFAFA; margin-bottom: 40px; }
+        .search-form { margin-top: 20px; }
+        .search-form input[type="text"] { font-family: 'EB Garamond', serif; font-size: 1em; padding: 10px; width: 100%; max-width: 280px; border: 1px solid #e0e0e0; background-color: #FAFAFA; display: block; margin-bottom: 15px; }
+        .search-form button { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.95em; background-color: #0077b6; color: white; border: none; padding: 10px 22px; border-radius: 3px; cursor: pointer; }
+        .search-form button:hover { background-color: #005f92; }
+        .recent-posts { list-style: none; padding: 0; margin: 0 0 40px 0; }
+        .recent-posts li { margin-bottom: 15px; line-height: 1.4; }
+        .recent-posts a { font-family: 'Inter', sans-serif; font-weight: 700; color: #0077b6; text-decoration: none; font-size: 1.1em; letter-spacing: -0.02em; }
+        .recent-posts a:hover { text-decoration: underline; }
+        /* --- Responsive Menu (Breakpoint Toggle) --- */
+        .desktop-only { display: inline-block; }
+        .mobile-only { display: none; }
+        
+       /* --- KỸ THUẬT THU GỌN TỊNH TIẾN (PROGRESSIVE COLLAPSE) --- */
+        .more-menu { display: none; } 
+        .in-more-1, .in-more-2, .in-more-3, .in-more-4 { display: none; } 
+
+        /* Mức 1: Dưới 980px -> Chỉ cất mục "People" */
+        @media screen and (max-width: 980px) {
+            .nav-col-1 { display: none !important; }
+            .more-menu { display: inline-block !important; }
+            .in-more-1 { display: block !important; }
+        }
+        
+        /* Mức 2: Dưới 840px -> Cất thêm mục "Publications" */
+        @media screen and (max-width: 840px) {
+            .nav-col-2 { display: none !important; }
+            .in-more-2 { display: block !important; }
+        }
+        
+        /* Mức 3: Dưới 740px -> Cất thêm mục "Blogs" */
+        @media screen and (max-width: 740px) {
+            .nav-col-3 { display: none !important; }
+            .in-more-3 { display: block !important; }
+        }
+        
+        /* Mức 4: Dưới 640px -> Cất thêm mục "Achievements" */
+        @media screen and (max-width: 640px) {
+            .nav-col-4 { display: none !important; }
+            .in-more-4 { display: block !important; }
+            nav { flex-wrap: wrap; row-gap: 15px; } 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+    <a href="index.html">
+        <img src="avatarfinal.jpg" alt="Profile Picture">
+        <div class="header-title-text">
+            <strong>Nguyen Tran Trong Nghia</strong> — <span class="header-title-subtitle">Aerospace Engineering & Applied Aerodynamics</span>
+        </div>
+    </a>
+</div>
+        
+        <nav>
+            <a href="about.html">About</a>
+            
+            <div class="dropdown">
+                <a href="javascript:void(0)">Research <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                <div class="dropdown-content">
+                    <a href="general.html#aerodynamics">Aerodynamics</a>
+                    <a href="general.html#cfd">Computational Fluid Dynamics</a>
+                    <a href="general.html#propulsion">Propulsion Systems</a>
+                </div>
+            </div>
+            
+            <a href="https://saemiller.com/flow/SAEMiller_Comp_Calc.html">Calcs</a>
+            
+            <div class="dropdown">
+                <a href="javascript:void(0)">Curiosity <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                <div class="dropdown-content">
+                    <a href="math.html">Engineering Mathematics & Calculus</a>
+                    <a href="aerodynamics.html">Aerodynamics & Aerospace Engineering</a>
+                    <a href="cfd.html">CFD & Numerical Methods</a>
+                    <a href="fluid.html">Fluid Mechanics & Viscous Flow</a>
+                    <a href="thermo.html">Thermodynamics, Heat & Propulsion</a>
+                </div>
+            </div>
+            
+            <a href="achievements.html" class="nav-col-4">Achievements</a>
+            <a href="blogs.html" class="nav-col-3">Blogs</a>
+
+            <div class="dropdown nav-col-2">
+                <a href="javascript:void(0)">Publications <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                <div class="dropdown-content">
+                    <a href="javascript:void(0)">– Journal Publications</a>
+                    <a href="conference paper with presentations.html">– Conference Papers with Presentations</a>
+                    <a href="javascript:void(0)">– Conference Presentations</a>
+                    <a href="javascript:void(0)">– Posters</a>
+                    <a href="javascript:void(0)">– Media</a>
+                </div>
+            </div>
+
+            <div class="dropdown nav-col-1">
+                <a href="javascript:void(0)">People <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                <div class="dropdown-content">
+                    <a href="javascript:void(0)">– Current and Previous</a>
+                    <a href="javascript:void(0)">– Select Photographs</a>
+                    <a href="javascript:void(0)">– Letter of Recommendation</a>
+                </div>
+            </div>
+
+            <div class="dropdown more-menu">
+                <a href="javascript:void(0)">
+                    <svg class="more-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="8" cy="12" r="1.5" fill="#FAFAFA"></circle><circle cx="12" cy="12" r="1.5" fill="#FAFAFA"></circle><circle cx="16" cy="12" r="1.5" fill="#FAFAFA"></circle></svg>
+                </a>
+                <div class="dropdown-content">
+                    <a href="achievements.html" class="in-more-4">– Achievements</a>
+                    <a href="blogs.html" class="in-more-3">– Blogs</a>
+                    
+                    <span class="dropdown-header in-more-2" style="margin-top: 10px;">Publications</span>
+                    <a href="javascript:void(0)" class="in-more-2">– Journal Publications</a>
+                    <a href="conference paper with presentations.html" class="in-more-2">– Conference Papers with Presentations</a>
+                    <a href="javascript:void(0)" class="in-more-2">– Conference Presentations</a>
+                    <a href="javascript:void(0)" class="in-more-2">– Posters</a>
+                    <a href="javascript:void(0)" class="in-more-2">– Media</a>
+                    
+                    <span class="dropdown-header in-more-1" style="margin-top: 10px;">People</span>
+                    <a href="javascript:void(0)" class="in-more-1">– Current and Previous</a>
+                    <a href="javascript:void(0)" class="in-more-1">– Select Photographs</a>
+                    <a href="javascript:void(0)" class="in-more-1">– Letter of Recommendation</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <article class="post">
+            <hr class="short-hr">
+            <h2><a href="KỶ YẾU KXD.pdf" target="_blank">Proceedings of CETA 2026: Numerical Investigation </a></h2>
+            <div class="post-content">
+                <p>The research paper detailing the investigation of aerodynamic characteristics and shock wave behavior of the swept-wing has been officially published within the proceedings of the CETA 2026 conference. This numerical investigation addresses the geometric parameterizations of specialized airfoils, specifically evaluating the SC(2)-0410bgeometries.</p>
+                <p>Analytical approaches were rigorously utilized to validate the numerical solutions extracted from Finite Volume Methods (FVM), executing discrete governing equations across computational platforms such as Ansys Fluent and SU2.</p>
+            </div>
+            <div class="post-meta">
+                <span class="meta-item">Posted by <a href="#author" style="margin-left:5px;">nttnghia</a></span>
+                <span class="meta-item">May 28, 2026</span>
+                <span class="meta-item">Posted in <a href="#category" style="margin-left:5px;">Aerodynamics, Conference Papers, Research</a></span>
+            </div>
+        </article>
+
+        <article class="post">
+            <hr class="short-hr">
+            <h2><a href="#cfd-rigor">Mathematical Rigor in Computational Fluid Dynamics</a></h2>
+            <div class="post-content">
+                <p>A critical evaluation of contemporary engineering practices reveals a concerning over-reliance on automated graphical interfaces. True analytical capability within Aerospace Engineering requires a fundamental understanding of the governing discrete equations. Operating simulation software without comprehending the underlying physics reduces the engineer to a mere "button pusher."</p>
+                <p>The core objective of ongoing academic training is to deconstruct the mathematical nature of Finite Volume Methods (FVM). By analyzing parameters through foundational calculus and fluid mechanics, numerical models generated via algorithms can be independently verified, ensuring absolute technical accuracy in high-speed flow prediction.</p>
+            </div>
+            <div class="post-meta">
+                <span class="meta-item">Posted by <a href="#author" style="margin-left:5px;">nttnghia</a></span>
+                <span class="meta-item">April 14, 2026</span>
+                <span class="meta-item">Posted in <a href="#category" style="margin-left:5px;">CFD, Fluid Dynamics, Mathematics, Physics</a></span>
+            </div>
+        </article>
+
+        <article class="post">
+            <hr class="short-hr">
+            <h2><a href="#materials">Interdisciplinary Research: Sustainability and Material Science</a></h2>
+            <div class="post-content">
+                <p>Academic engagement extends beyond computational aerodynamics into interdisciplinary material science. Current collaborative projects under the supervision of Dr. Pham Ba Tung at the Vietnam Aviation Academy involve the development and testing of luminescent glass bricks (gạch thủy tinh phát quang), evaluating their structural and optical properties for advanced applications.</p>
+                <p>Parallel to this, prior sustainability research explored the preservation and structural viability of 'Mo Cau' as a green material alternative, demonstrating the necessity of integrating cultural symbols with empirical material science paradigms.</p>
+            </div>
+            <div class="post-meta">
+                <span class="meta-item">Posted by <a href="#author" style="margin-left:5px;">nttnghia</a></span>
+                <span class="meta-item">March 22, 2026</span>
+                <span class="meta-item">Posted in <a href="#category" style="margin-left:5px;">Applied Physics, Sustainability, Materials</a></span>
+            </div>
+        </article>
+        
+        <article class="post">
+            <hr class="short-hr">
+            <h2><a href="#athletics">Physical Conditioning: Muay Thai and Kickboxing</a></h2>
+            <div class="post-content">
+                <p>Rigorous academic pursuits demand proportional physical discipline. Competitive engagement as an athlete in Muay Thai and Kickboxing provides an essential counterweight to the intense mental focus required for computational fluid dynamics research.</p>
+                <p>The physiological demands and strategic mechanics of combat sports cultivate resilience, highly structured routines, and a direct application of biomechanical principles, ensuring sustained focus in high-pressure academic environments.</p>
+            </div>
+            <div class="post-meta">
+                <span class="meta-item">Posted by <a href="#author" style="margin-left:5px;">nttnghia</a></span>
+                <span class="meta-item">February 05, 2026</span>
+                <span class="meta-item">Posted in <a href="#category" style="margin-left:5px;">Athletics, Life, Discipline</a></span>
+            </div>
+        </article>
+
+        <div class="pagination">
+            <span class="current">1</span>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <span class="dots">…</span>
+            <a href="#">8</a>
+            <a href="#" style="margin-left: 10px;">Older posts <span style="font-size: 1.2em; vertical-align: middle;">&rsaquo;</span></a>
+        </div>
+
+        <div class="footer-widgets">
+            <div class="widget">
+                <hr class="short-hr">
+                <h3>Categories</h3>
+                <select><option>Select Category</option><option>Aerodynamics</option><option>CFD</option><option>Fluid Dynamics</option><option>Materials</option></select>
+                <div class="search-form">
+                    <input type="text" placeholder="Search …">
+                    <button type="submit">Search</button>
+                </div>
+            </div>
+            <div class="widget">
+                <hr class="short-hr">
+                <h3>Recent Posts</h3>
+                <ul class="recent-posts">
+                    <li><a href="KỶ YẾU KXD.pdf" target="_blank">Proceedings of CETA 2026: CRM Wing Optimization</a></li>
+                    <li><a href="#cfd-rigor">Mathematical Rigor in Computational Fluid Dynamics</a></li>
+                    <li><a href="#materials">Interdisciplinary Research: Sustainability and Material Science</a></li>
+                    <li><a href="#athletics">Physical Conditioning: Muay Thai and Kickboxing</a></li>
+                </ul>
+                <hr class="short-hr">
+                <h3>Archives</h3>
+                <select><option>May 2026</option><option>April 2026</option><option>March 2026</option><option>February 2026</option></select>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
