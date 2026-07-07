@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic CV - Nguyen Tran Trong Nghia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Typography & Base Variables */
+        :root {
+            --font-heading: 'Inter', sans-serif;
+            --font-body: 'EB Garamond', serif;
+            --color-text: #111111;
+            --color-link: #005f92;
+            --color-border: #111111;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: var(--color-text);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 50px 30px;
+            background-color: #FFFFFF;
+        }
+
+        /* Header Layout */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 2.2em;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin: 0 0 5px 0;
+        }
+
+        .subtitle {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.95em;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .contact-info {
+            font-family: var(--font-heading);
+            font-size: 0.9em;
+        }
+
+        .contact-info a {
+            color: var(--color-link);
+            text-decoration: none;
+            font-weight: 700;
+            margin: 0 6px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Formatting */
+        h2 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.25em;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--color-border);
+            padding-bottom: 4px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            letter-spacing: -0.01em;
+        }
+
+        .section-item {
+            margin-bottom: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .item-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.05em;
+        }
+
+        .item-date {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.9em;
+            text-align: right;
+        }
+
+        /* Đã xóa in nghiêng và đồng bộ font chữ ở phần này */
+        .item-subtitle {
+            font-style: normal;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        /* Lists */
+        ul {
+            margin-top: 0;
+            padding-left: 20px;
+            list-style-type: square;
+        }
+
+        li {
+            margin-bottom: 6px;
+            text-align: justify;
+        }
+
+        .skills-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .skills-list li {
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        .skills-list strong {
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+
+        /* APA Citation Formatting */
+        .publication {
+            padding-left: 30px;
+            text-indent: -30px;
+            margin-bottom: 15px;
+            text-align: left;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Nguyen Tran Trong Nghia</h1>
+        <div class="subtitle">An undergraduate researcher at the Vietnam Aviation Academy specializing in Aerospace Engineering</div>
+        <div class="contact-info">
+            <a href="https://www.linkedin.com/in/nghia-nguyen-8a3a7935b/" target="_blank">LinkedIn</a> | 
+            <a href="https://www.researchgate.net/profile/Nghia-Nguyen-Tran-Trong?ev=hdr_xprf" target="_blank">ResearchGate</a> | 
+            <a href="https://nghiaaero.id.vn/" target="_blank">Academic Portfolio</a>
+        </div>
+    </header>
+
+    <section>
+        <h2>Education</h2>
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Vietnam Aviation Academy (VAA)</span>
+                <span class="item-date">Ho Chi Minh City, Vietnam</span>
+            </div>
+            <div class="item-subtitle">Undergraduate in Aerospace Engineering</div>
+            <ul>
+                <li><strong>Cumulative GPA:</strong> 3.4/4.0</li>
+                <li><strong>Academic Focus:</strong> Computational Fluid Dynamics (CFD), Applied Aerodynamics, Propulsion Systems.</li>
+            </ul>
+        </div>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Nguyen Van Linh High School</span>
+                <span class="item-date">Ho Chi Minh City, Vietnam</span>
+            </div>
+            <div class="item-subtitle">High School Diploma (Graduated: 2025)</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Technical Skills</h2>
+        <ul class="skills-list">
+            <li><strong>Computational & Simulation Software:</strong>  Ansys (Fluent), SU2 Harrier, Nektar++, Siemens NX, Solidworks, XFLR5, .</li>
+            <li><strong>Workflow Automation:</strong> n8n, API Integration (Lark, Google Sheets).</li>
+            <li><strong>Research Methodologies & Frameworks:</strong> Finite Volume Method (FVM) & Spectral Element Method (SEM),Computational Fluid Dynamics (CFD), Principles of Aerodynamics, Turbulence Modeling, Transonic & Subsonic Flow Analysis</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Research Experience</h2>
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Undergraduate Researcher</span>
+                <span class="item-date">Vietnam Aviation Academy</span>
+            </div>
+            <div class="item-subtitle">Aerodynamics & CFD Research</div>
+            <ul>
+                <li>Served as lead researcher in evaluating the aerodynamic characteristics and shock wave behavior of the Common Research Model (CRM) wing.</li>
+                <li>Conducted numerical investigations on specialized airfoils, specifically utilizing SC(2)-0410, Korn 82-06-09 and ONERA OAT15A.</li>
+                <li>Validated numerical solutions extracted from Finite Volume Methods (FVM) against analytical approaches to ensure absolute technical accuracy in high-speed flow prediction.</li>
+            </ul>
+        </div>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Research Assistant</span>
+                <span class="item-date">Vietnam Aviation Academy</span>
+            </div>
+            <div class="item-subtitle">Dr. Pham Ba Tung's Interdisciplinary Research Team</div>
+            <ul>
+                <li>Analysis Investigate pressure contribution of SC(2)-0410 swept wing on blended winglet </li>
+            </ul>
+        </div>
+
+    <section>
+        <h2>Professional Experience</h2>
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Technical Intern</span>
+                <span class="item-date">July 2025 – September 2025</span>
+            </div>
+            <div class="item-subtitle">Tictag JSC</div>
+            <ul>
+                <li>Developed and engineered automated operational workflows.</li>
+                <li>Designed and integrated data synchronization systems utilizing n8n, connecting APIs across enterprise platforms (Lark, Google Sheets) to optimize operational data flows.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Publications & Presentations</h2>
+        <div class="publication">
+            <strong>Nghia.N.T.T</strong>, Cao Dang Minh, Pham Hung, Pham Ba Tung (2026, May 23).<em>, Cao Dang Minh, Pham Hung, Pham Ba Tung (2026, May 23). <em>Analysis Investigate pressure contribution of SC(2)-0410 swept wing on blended winglet.</em> The 4th Conference on Construction Engineers and Technology for Airport (CETA), Ho Chi Minh City, Vietnam.
+        </div>
+    </section>
+
+    <section>
+        <h2>Honors & Awards</h2>
+        <ul>
+            <li><strong>Certificate of Presentation:</strong> The 4th Conference on Construction Engineers and Technology for Airport (CETA) (May 2026).</li>
+            <li><strong>Certificate of Successful Participation:</strong> International Astronomy and Astrophysics Competition (IAAC) Qualification Round (July 2025).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Extracurricular Activities</h2>
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Competitive Athlete</span>
+                <span class="item-date"></span>
+            </div>
+            <div class="item-subtitle">Muay Thai & Kickboxing</div>
+            <ul>
+                <li>Engaged in rigorous physical conditioning and combat sports, applying biomechanical principles and maintaining strict structural routines to counterbalance the cognitive demands of continuous computational research environments.</li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html>
