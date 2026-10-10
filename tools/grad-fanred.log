@@ -1,0 +1,20 @@
+logo-emblem.svg: gradient fanRed has 5 stops; class=warm (33,098 px)
+  start score = 0.019083  stops = [0.7, 0.55, 0.32, 0.14, 0.035]
+  round 0 stop[0] 0.7 -> 0.63  score 0.019022
+  round 0 stop[1] 0.55 -> 0.6875  score 0.018654
+  round 0 stop[2] 0.32 -> 0.704  score 0.017132
+  round 0 stop[3] 0.14 -> 0.175  score 0.017130
+  round 0 stop[4] 0.035 -> 0.105  score 0.017108
+  round 1 stop[0] 0.63 -> 0.567  score 0.016828
+  round 1 stop[2] 0.704 -> 0.7744  score 0.016696
+  round 1 stop[3] 0.175 -> 0.1925  score 0.016692
+  round 1 stop[4] 0.105 -> 0.315  score 0.016647
+  round 2 stop[3] 0.1925 -> 0.154  score 0.016641
+  round 2 stop[4] 0.315 -> 0.693  score 0.016625
+  round 3 stop[0] 0.567 -> 0.5103  score 0.016601
+  round 3 stop[2] 0.7744 -> 0.8518  score 0.016518
+  round 3 stop[3] 0.154 -> 0.1925  score 0.016491
+  round 3 stop[4] 0.693 -> 0.7623  score 0.016487
+  round 4: no further improvement
+  final score = 0.016487  stops = [0.5103, 0.6875, 0.85184, 0.1925, 0.7623]
+  wrote D:\Personal Website\tools\_compare\emblem-fanred.svg

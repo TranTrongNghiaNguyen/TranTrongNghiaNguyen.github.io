@@ -1,0 +1,20 @@
+reference block: w=794 h=28 top=323 bottom=350
+  Times New Roman          size=  41.09 track=  9.728 y= 351.00  h= 29 w= 832  score=0.102440
+  Georgia                  size=  37.93 track=  9.180 y= 350.00  h= 28 w= 793  score=0.086372
+  Garamond                 size=  41.09 track=  9.299 y= 350.00  h= 28 w= 834  score=0.092566
+  Book Antiqua             size=  39.45 track=  9.204 y= 351.00  h= 29 w= 830  score=0.100805
+  Palatino Linotype        size=  39.45 track=  9.251 y= 351.00  h= 29 w= 831  score=0.100318
+  Cambria                  size=  41.09 track= 10.453 y= 350.50  h= 28 w= 792  score=0.079887
+  Constantia               size=  39.45 track=  9.453 y= 350.50  h= 28 w= 792  score=0.080400
+  Bookman Old Style        size=  39.45 track=  9.109 y= 350.50  h= 28 w= 832  score=0.109521
+  Century Schoolbook       size=  36.52 track=  9.180 y= 350.00  h= 28 w= 812  score=0.079676
+  Sylfaen                  size=  39.45 track=  9.271 y= 350.00  h= 28 w= 792  score=0.083026
+  Playfair Display         size=  41.09 track=  9.728 y= 351.00  h= 29 w= 832  score=0.102440
+  Baskerville Old Face     size=  39.45 track=  9.180 y= 350.00  h= 28 w= 813  score=0.091495
+  Bodoni MT                size=  41.09 track=  9.156 y= 350.50  h= 28 w= 847  score=0.104732
+  Perpetua                 size=  44.83 track=  9.271 y= 349.50  h= 27 w= 792  score=0.077021
+  Cormorant Garamond       size=  41.09 track=  9.728 y= 351.00  h= 29 w= 832  score=0.102440
+  EB Garamond              size=  41.09 track=  9.728 y= 351.00  h= 29 w= 832  score=0.102440
+
+best: Perpetua  size=44.83 track=9.271 y=349.5  score=0.077021
+(dry run; pass --apply to write)

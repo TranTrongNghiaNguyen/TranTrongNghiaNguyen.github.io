@@ -1,0 +1,10 @@
+logo-emblem.svg: fitting 8 layers over 80,232 active px
+  active-pixel ink MAE: 0.08404 -> 0.06923
+  0:g        #a9bbd6 w=1 op=0.92                gain  0.884
+  1:ellipse  #071956 w=2.0375                   gain  0.720
+  2:ellipse  #173676 w=1.4484 op=0.7938         gain  0.650
+  3:ellipse  #a2b4d1 w=1.223 op=0.561           gain  0.632
+  4:g        url(#fanRed) w=0.9143 op=0.9384    gain  0.538
+  5:g        url(#fanBlue) w=1.02 op=0.18       gain  0.995
+  6:g        url(#flowBlue) w=1.2638            gain  0.405
+  7:path                                        gain  0.865

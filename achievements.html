@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - Nguyễn Trần Trọng Nghĩa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Cấu trúc Typography và Layout cơ bản */
+        body { font-family: 'EB Garamond', serif; font-size: 1.25rem; line-height: 1.8; color: #2c2c2c; max-width: 800px; margin: 0 auto; padding: 60px 20px; background-color: #FCFCFC; }
+        header { margin-bottom: 70px; }
+        .header-title { display: flex; align-items: center; margin-bottom: 30px; }
+        .header-title img { border-radius: 50%; width: 90px; height: 90px; object-fit: cover; margin-right: 20px; }
+        .header-title-text { font-family: 'Inter', sans-serif; font-size: 1.3em; color: #111; }
+        .header-title-text strong { font-weight: 700; }
+        .header-title-subtitle { font-family: 'EB Garamond', serif; font-size: 0.9em; color: #666; margin-left: 10px; font-style: italic; }
+        .header-title a { text-decoration: none; color: inherit; display: flex; align-items: center; }
+        
+        nav { font-family: 'Inter', sans-serif; border-bottom: 1px solid #e0e0e0; padding-bottom: 15px; display: flex; gap: 25px; align-items: center; }
+        nav a { text-decoration: none; color: #0077b6; font-weight: 700; font-size: 1.1em; letter-spacing: -0.02em; display: flex; align-items: center; }
+        nav a:hover { color: #005f92; }
+        
+        .svg-icon { width: 14px; height: 14px; margin-left: 5px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+        .more-icon { width: 24px; height: 24px; fill: currentColor; margin-top: 2px; cursor: pointer; }
+        
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; background-color: #0077b6; min-width: 320px; box-shadow: 0px 10px 25px rgba(0,0,0,0.15); z-index: 1; top: 100%; left: 0; padding: 10px 0; text-align: left; }
+        .dropdown-header { color: #FFFFFF; font-weight: 800; font-size: 1.05em; padding: 12px 24px 6px 24px; display: block; }
+        .dropdown-content a { color: #FFFFFF; padding: 6px 24px; text-decoration: none; display: block; font-weight: 700; font-size: 0.95em; border: none; }
+        .dropdown-content a:hover { background-color: #005f92; color: #FFFFFF; }
+        .dropdown:hover .dropdown-content { display: block; }
+
+        /* Cấu trúc riêng cho trang Achievements */
+        h1 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 2.4em; margin-bottom: 5px; margin-top: 0; letter-spacing: -0.03em; }
+        .short-hr { border: 0; border-top: 1px solid #111; width: 45px; margin: 0 0 40px 0; float: left; }
+        .short-hr::after { content: ""; clear: both; display: table; }
+        
+        .achievement-post { 
+            margin-bottom: 60px; 
+            clear: both; 
+            border-bottom: 1px solid #eee; 
+            padding-bottom: 40px; 
+        }
+        .achievement-post:last-child { border-bottom: none; }
+        
+        .achievement-post h2 { 
+            font-family: 'Inter', sans-serif; 
+            font-weight: 800; 
+            font-size: 1.6em; 
+            margin-bottom: 5px; 
+            margin-top: 0; 
+            letter-spacing: -0.02em; 
+            color: #111; 
+        }
+        
+        .achievement-date { 
+            font-family: 'EB Garamond', serif; 
+            font-size: 0.95em; 
+            color: #666; 
+            font-style: italic; 
+            margin-bottom: 15px; 
+        }
+        
+        .achievement-img { 
+            max-width: 100%; 
+            height: auto; 
+            border: 1px solid #e0e0e0; 
+            margin-bottom: 20px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+        }
+        
+        .achievement-desc { 
+            text-align: justify; 
+            margin-bottom: 15px; 
+        }
+
+        .pdf-button {
+            display: inline-flex;
+            align-items: center;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.9em;
+            color: #0077b6;
+            text-decoration: none;
+            border: 1px solid #0077b6;
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: all 0.2s ease;
+        }
+        .pdf-button:hover {
+            background-color: #0077b6;
+            color: #FFF;
+        }
+        .pdf-button .svg-icon { margin-left: 0; margin-right: 8px; }
+/* --- Responsive Menu (Breakpoint Toggle) --- */
+        .desktop-only { display: inline-block; }
+        .mobile-only { display: none; }
+        
+        /* --- KỸ THUẬT THU GỌN TỊNH TIẾN (PROGRESSIVE COLLAPSE) --- */
+        .more-menu { display: none; } 
+        .in-more-1, .in-more-2, .in-more-3, .in-more-4 { display: none; } 
+
+        /* Mức 1: Dưới 980px -> Chỉ cất mục "People" */
+        @media screen and (max-width: 980px) {
+            .nav-col-1 { display: none !important; }
+            .more-menu { display: inline-block !important; }
+            .in-more-1 { display: block !important; }
+        }
+        
+        /* Mức 2: Dưới 840px -> Cất thêm mục "Publications" */
+        @media screen and (max-width: 840px) {
+            .nav-col-2 { display: none !important; }
+            .in-more-2 { display: block !important; }
+        }
+        
+        /* Mức 3: Dưới 740px -> Cất thêm mục "Blogs" */
+        @media screen and (max-width: 740px) {
+            .nav-col-3 { display: none !important; }
+            .in-more-3 { display: block !important; }
+        }
+        
+        /* Mức 4: Dưới 640px -> Cất thêm mục "Achievements" */
+        @media screen and (max-width: 640px) {
+            .nav-col-4 { display: none !important; }
+            .in-more-4 { display: block !important; }
+            nav { flex-wrap: wrap; row-gap: 15px; } 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <a href="index.html">
+                <img src="airfoil - copy.png" alt="Profile Picture">
+                <div class="header-title-text">
+                    <strong>Nguyen Tran Trong Nghia</strong> — <span class="header-title-subtitle">Aerospace Engineering & Applied Aerodynamics</span>
+                </div>
+            </a>
+        </div>
+        
+        <nav>
+            <a href="about.html">About</a>
+            
+            <div class="dropdown">
+                <a href="javascript:void(0)">Research <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                <div class="dropdown-content">
+                    <a href="general.html#aerodynamics">Aerodynamics</a>
+                    <a href="general.html#cfd">Computational Fluid Dynamics</a>
+                    <a href="general.html#propulsion">Propulsion Systems</a>
+                </div>
+            </div>
+            
+            <a href="https://saemiller.com/flow/SAEMiller_Comp_Calc.html">Calcs</a>
+            
+            <div class="dropdown">
+                <a href="javascript:void(0)">Curiosity <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                <div class="dropdown-content">
+                    <a href="math.html">Engineering Mathematics & Calculus</a>
+                    <a href="aerodynamics.html">Aerodynamics & Aerospace Engineering</a>
+                    <a href="cfd.html">CFD & Numerical Methods</a>
+                    <a href="fluid.html">Fluid Mechanics & Viscous Flow</a>
+                    <a href="thermo.html">Thermodynamics, Heat & Propulsion</a>
+                </div>
+            </div>
+            
+            <a href="achievements.html" class="nav-col-4">Achievements</a>
+            <a href="blogs.html" class="nav-col-3">Blogs</a>
+
+            <div class="dropdown nav-col-2">
+                <a href="javascript:void(0)">Publications <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                <div class="dropdown-content">
+                    <a href="javascript:void(0)">– Journal Publications</a>
+                    <a href="conference paper with presentations.html">– Conference Papers with Presentations</a>
+                    <a href="javascript:void(0)">– Conference Presentations</a>
+                    <a href="javascript:void(0)">– Posters</a>
+                    <a href="javascript:void(0)">– Media</a>
+                </div>
+            </div>
+
+            <div class="dropdown nav-col-1">
+                <a href="javascript:void(0)">People <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                <div class="dropdown-content">
+                    <a href="javascript:void(0)">– Current and Previous</a>
+                    <a href="javascript:void(0)">– Select Photographs</a>
+                    <a href="javascript:void(0)">– Letter of Recommendation</a>
+                </div>
+            </div>
+
+            <div class="dropdown more-menu">
+                <a href="javascript:void(0)">
+                    <svg class="more-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="8" cy="12" r="1.5" fill="#FAFAFA"></circle><circle cx="12" cy="12" r="1.5" fill="#FAFAFA"></circle><circle cx="16" cy="12" r="1.5" fill="#FAFAFA"></circle></svg>
+                </a>
+                <div class="dropdown-content">
+                    <a href="achievements.html" class="in-more-4">– Achievements</a>
+                    <a href="blogs.html" class="in-more-3">– Blogs</a>
+                    
+                    <span class="dropdown-header in-more-2" style="margin-top: 10px;">Publications</span>
+                    <a href="javascript:void(0)" class="in-more-2">– Journal Publications</a>
+                    <a href="conference paper with presentations.html" class="in-more-2">– Conference Papers with Presentations</a>
+                    <a href="javascript:void(0)" class="in-more-2">– Conference Presentations</a>
+                    <a href="javascript:void(0)" class="in-more-2">– Posters</a>
+                    <a href="javascript:void(0)" class="in-more-2">– Media</a>
+                    
+                    <span class="dropdown-header in-more-1" style="margin-top: 10px;">People</span>
+                    <a href="javascript:void(0)" class="in-more-1">– Current and Previous</a>
+                    <a href="javascript:void(0)" class="in-more-1">– Select Photographs</a>
+                    <a href="javascript:void(0)" class="in-more-1">– Letter of Recommendation</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Achievements & Certifications</h1>
+        <hr class="short-hr">
+
+        <!-- THÀNH TÍCH 1: CETA 2026 -->
+        <article class="achievement-post">
+            <h2>Conference Presentation Certificate: CETA 2026</h2>
+            <div class="achievement-date">May 23, 2026</div>
+            <img src="z7875016965903_75c8e46bf1dda2132ccdbcfb873d0fa3.jpg" alt="CETA 2026 Certificate" class="achievement-img">
+            <p class="achievement-desc">Awarded for successfully delivering a research presentation titled "Numerical Investigation of pressure distribution over a swept wing based on SC(2)-0410 airfoil with a blended-winglet " at The 4th Conference on Construction Engineers and Technology for Airport, Ho Chi Minh City.</p>
+        </article>
+
+        <!-- THÀNH TÍCH 2: IAAC 2025 (KÈM FILE PDF) -->
+        <article class="achievement-post">
+            <h2>International Astronomy and Astrophysics Competition</h2>
+            <div class="achievement-date">July 21, 2025</div>
+            <a href="Certificate-QR-2025-FE2C6580DA4-52a1ee03501d40d7c12b1036b7d59d6e (1).pdf" target="_blank" class="pdf-button">
+                <svg class="svg-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                View IAAC 2025 Certificate (PDF)
+            </a>
+            <p class="achievement-desc">Recognized for successfully participating in the Qualification Round of the 2025 International Astronomy and Astrophysics Competition (IAAC), demonstrating foundational knowledge and analytical problem-solving skills in astrophysics.</p>
+        </article>
+
+        <!-- THÀNH TÍCH 3: TICTAG INTERNSHIP (KÈM FILE PDF) -->
+        <article class="achievement-post">
+            <h2>Technical Internship: Tictag JSC</h2>
+            <div class="achievement-date">July 20 - September 20, 2025</div>
+            <a href="Certificate - Nguyen Tran Trong Nghia-signed (1).pdf" target="_blank" class="pdf-button">
+                <svg class="svg-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                View Internship Certificate (PDF)
+            </a>
+            <p class="achievement-desc">Recognized for the outstanding completion of a technical internship program at Tictag Vietnam. The operational responsibilities involved designing automated workflows and integrating enterprise data synchronization systems utilizing n8n.</p>
+        </article>
+
+        <!-- THÀNH TÍCH 4: MO CAU POSTER -->
+        <article class="achievement-post">
+            <h2>Research Poster: Interdisciplinary Sustainability</h2>
+            <div class="achievement-date">2026</div>
+            <a href="JHU RESEARCH POSTER 2026 (1).pdf" target="_blank" class="pdf-button">
+                <svg class="svg-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                View Mocau Research Poster (PDF)
+                </a>
+            <p class="achievement-desc">Co-authored of a research poster titled "Preserving and Promoting Mo Cau as a Culturally Authentic and Sustainable Product." This interdisciplinary project bridges cultural heritage preservation with sustainable material science paradigms.</p>
+        </article>
+
+    </main>
+</body>
+</html>

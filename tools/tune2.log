@@ -1,0 +1,26 @@
+logo-emblem.svg: 18 knobs
+  start ink_mae = 0.008047
+  round 0 1:ellipse:#071956.stroke-width     x0.85  -> 0.007891
+  round 0 2:ellipse:#173676.stroke-width     x1.02  -> 0.007889
+  round 0 2:ellipse:#173676.opacity          x0.98  -> 0.007888
+  round 0 3:ellipse:#a2b4d1.stroke-width     x0.96  -> 0.007887
+  round 0 4:g:url(#fanRed).stroke-width      x0.85  -> 0.007734
+  round 0 4:g:url(#fanRed).opacity           x0.92  -> 0.007727
+  round 0 6:g:url(#flowBlue).stroke-width    x1.18  -> 0.007672
+  round 0 7:path:#090e4b.stroke-width        x1.18  -> 0.007415
+  round 0 grad:fanBlue.stop-opacity          x1.18  -> 0.007414
+  round 0 grad:flowBlue.stop-opacity         x1.18  -> 0.007389
+  round 1 0:g:fill.opacity                   x0.92  -> 0.007389
+  round 1 1:ellipse:#071956.stroke-width     x1.02  -> 0.007374
+  round 1 4:g:url(#fanRed).stroke-width      x0.98  -> 0.007374
+  round 1 4:g:url(#fanRed).opacity           x1.02  -> 0.007374
+  round 1 6:g:url(#flowBlue).stroke-width    x1.02  -> 0.007373
+  round 1 7:path:#090e4b.stroke-width        x1.09  -> 0.007346
+  round 1 7:path:#090e4b.opacity             x0.98  -> 0.007341
+  round 1 grad:fanBlue.stop-opacity          x1.02  -> 0.007341
+  round 2 3:ellipse:#a2b4d1.stroke-width     x0.98  -> 0.007341
+  round 2 3:ellipse:#a2b4d1.opacity          x1.02  -> 0.007341
+  round 2 4:g:url(#fanRed).stroke-width      x0.98  -> 0.007340
+  round 3: no further improvement
+  final score = 0.007340
+  wrote D:\Personal Website\logo-emblem.svg

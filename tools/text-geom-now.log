@@ -1,0 +1,15 @@
+--- band y 300..380 ---
+              x0        x1         w       top    bottom         h      runs     pitch       ink
+   ref       850      1643       794       323       350        28        23     35.11   3968.25
+   out       848      1642       795       324       349        26        23     35.09   4166.89
+   diff  dx0=-2 dx1=-1 dtop=+1 dbottom=-1  width x1.0013  height x0.9286
+--- band y 400..490 ---
+              x0        x1         w       top    bottom         h      runs     pitch       ink
+   ref       843      1641       799       412       477        66        12     68.09  11165.78
+   out       841      1639       799       412       477        66        12     67.86  12654.54
+   diff  dx0=-2 dx1=-2 dtop=+0 dbottom=+0  width x1.0000  height x1.0000
+--- band y 520..600 ---
+              x0        x1         w       top    bottom         h      runs     pitch       ink
+   ref       848      1643       796       544       568        25        26     31.10   3063.22
+   out       849      1643       795       545       568        24        26     31.04   2949.89
+   diff  dx0=+1 dx1=+0 dtop=+1 dbottom=+0  width x0.9987  height x0.9600

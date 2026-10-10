@@ -1,0 +1,20 @@
+=== emblem-fanred-global.svg vs airfoil - copy.png (831x833) ===
+  ink_mae   : 0.015099
+  ink_ratio : 0.9449
+  err_total : 10,452.1
+  error share grid (% of total abs ink error):
+     0.0   4.4   5.6   1.8   1.9   0.0
+     2.1   2.8   1.1   2.1   1.5   1.7
+     2.0   4.7   7.4   4.2   1.4   2.1
+     2.2   4.2   7.0   4.2   3.3   3.0
+     2.8   1.8   1.0   2.4   1.1   1.8
+     0.0   3.7   4.1   6.7   4.1   0.0
+  worst 8 cells:
+   r2c2  region 277,277,415,416  err=   775.3 ( 7.4%)  ref=   829.9 out=   816.6 ratio= 0.98  render light
+   r3c2  region 277,416,415,555  err=   729.2 ( 7.0%)  ref=   745.6 out=   770.1 ratio= 1.03  render heavy
+   r5c3  region 415,694,554,833  err=   697.9 ( 6.7%)  ref=   501.9 out=   462.8 ratio= 0.92  render light
+   r0c2  region 277,0,415,138  err=   582.1 ( 5.6%)  ref=   498.5 out=   447.5 ratio= 0.90  render light
+   r2c1  region 138,277,277,416  err=   487.6 ( 4.7%)  ref=   753.3 out=   650.8 ratio= 0.86  render light
+   r0c1  region 138,0,277,138  err=   460.6 ( 4.4%)  ref=   387.4 out=   360.3 ratio= 0.93  render light
+   r3c1  region 138,416,277,555  err=   442.9 ( 4.2%)  ref=   755.1 out=   699.1 ratio= 0.93  render light
+   r3c3  region 415,416,554,555  err=   441.5 ( 4.2%)  ref=   525.1 out=   498.4 ratio= 0.95  render light

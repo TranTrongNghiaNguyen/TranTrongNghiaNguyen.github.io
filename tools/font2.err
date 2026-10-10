@@ -1,0 +1,5 @@
+usage: match_font.py [-h] [--svg SVG]
+                     [--target {emblem,full,emblem-raster,full-raster}]
+                     [--index INDEX] [--band BAND] [--x X]
+                     [--families FAMILIES] [--apply]
+match_font.py: error: unrecognized arguments: Serif Pro;Noto Serif;PT Serif;Liberation Serif;DejaVu Serif;Free Serif;Cardo;Junicode

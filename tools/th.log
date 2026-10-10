@@ -1,0 +1,18 @@
+usage: tune_emblem.py [-h] [--png PNG] [--group GROUP] [--floor FLOOR]
+                      [--rounds ROUNDS] [--factors FACTORS] [--apply]
+                      [--out OUT] [--sigma SIGMA]
+                      [svg]
+
+positional arguments:
+  svg
+
+options:
+  -h, --help         show this help message and exit
+  --png PNG
+  --group GROUP
+  --floor FLOOR
+  --rounds ROUNDS
+  --factors FACTORS
+  --apply            write the tuned SVG back
+  --out OUT          write the tuned SVG here instead of in place
+  --sigma SIGMA

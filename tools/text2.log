@@ -1,0 +1,16 @@
+--- text[0] band 300..370  font-size=38.0 letter-spacing=10.0 x=850.0 y=350.0
+    ref w=794 h=28 top=323   out w=799 h=29 top=322
+    font-size -> 35.22  letter-spacing -> 11.68  score 0.081920
+    y -> 349.5  score 0.080776
+    x -> 847.5  score 0.073089
+--- text[1] band 380..500  font-size=84.0 letter-spacing=9.0 x=844.0 y=477.0
+    ref w=799 h=66 top=412   out w=770 h=58 top=420
+    font-size -> 84  letter-spacing -> 11.64  score 0.096099
+    y -> 476  score 0.092529
+    x -> 843.5  score 0.092107
+--- text[2] band 520..600  font-size=35.0 letter-spacing=7.0 x=847.0 y=568.0
+    ref w=796 h=25 top=544   out w=785 h=27 top=542
+    font-size -> 32.41  letter-spacing -> 9  score 0.033287
+    y -> 568.5  score 0.032863
+    x -> 847  score 0.032863
+wrote D:\Personal Website\logo.svg

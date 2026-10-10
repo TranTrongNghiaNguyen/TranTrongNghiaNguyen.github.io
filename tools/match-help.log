@@ -1,0 +1,14 @@
+usage: match_font.py [-h] [--svg SVG]
+                     [--target {emblem,full,emblem-raster,full-raster}]
+                     [--index INDEX] [--band BAND] [--x X]
+                     [--families FAMILIES] [--apply]
+
+options:
+  -h, --help            show this help message and exit
+  --svg SVG
+  --target {emblem,full,emblem-raster,full-raster}
+  --index INDEX
+  --band BAND
+  --x X
+  --families FAMILIES
+  --apply

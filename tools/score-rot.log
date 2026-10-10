@@ -1,0 +1,20 @@
+=== emblem-rings-rot.svg vs airfoil - copy.png (831x833) ===
+  ink_mae   : 0.015134
+  ink_ratio : 0.9332
+  err_total : 10,476.3
+  error share grid (% of total abs ink error):
+     0.0   4.7   6.0   1.9   1.5   0.0
+     2.1   2.8   1.0   1.7   1.4   1.5
+     2.0   4.7   7.2   4.1   1.4   2.1
+     2.3   4.4   7.0   4.2   3.3   3.2
+     2.4   1.7   1.0   2.2   1.2   2.1
+     0.0   3.4   4.3   6.8   4.4   0.0
+  worst 8 cells:
+   r2c2  region 277,277,415,416  err=   749.9 ( 7.2%)  ref=   829.9 out=   744.1 ratio= 0.90  render light
+   r3c2  region 277,416,415,555  err=   732.2 ( 7.0%)  ref=   745.6 out=   776.9 ratio= 1.04  render heavy
+   r5c3  region 415,694,554,833  err=   716.2 ( 6.8%)  ref=   501.9 out=   461.9 ratio= 0.92  render light
+   r0c2  region 277,0,415,138  err=   633.7 ( 6.0%)  ref=   498.5 out=   447.4 ratio= 0.90  render light
+   r0c1  region 138,0,277,138  err=   491.7 ( 4.7%)  ref=   387.4 out=   361.7 ratio= 0.93  render light
+   r2c1  region 138,277,277,416  err=   487.8 ( 4.7%)  ref=   753.3 out=   648.5 ratio= 0.86  render light
+   r5c4  region 554,694,692,833  err=   461.0 ( 4.4%)  ref=   503.5 out=   466.2 ratio= 0.93  render light
+   r3c1  region 138,416,277,555  err=   460.0 ( 4.4%)  ref=   755.1 out=   723.8 ratio= 0.96  render light

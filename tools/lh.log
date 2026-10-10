@@ -1,0 +1,13 @@
+usage: logo_layers.py [-h] [--png PNG] [--group GROUP] [--center CENTER]
+                      [--radii RADII]
+                      [svg]
+
+positional arguments:
+  svg
+
+options:
+  -h, --help       show this help message and exit
+  --png PNG
+  --group GROUP
+  --center CENTER
+  --radii RADII

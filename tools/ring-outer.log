@@ -1,0 +1,6 @@
+iter 0: cx=418.227 cy=424.466 rx=385.752 ry=372.085 rot=-89.0231  ink/arc=2.0852 core=0.976  -> width~2.135px
+iter 1: cx=418.228 cy=424.468 rx=385.750 ry=372.086 rot=-88.9894  ink/arc=2.0857 core=0.976  -> width~2.136px
+iter 2: cx=418.228 cy=424.468 rx=385.750 ry=372.086 rot=-88.9878  ink/arc=2.0857 core=0.976  -> width~2.136px
+iter 3: cx=418.228 cy=424.468 rx=385.750 ry=372.086 rot=-88.9878  ink/arc=2.0857 core=0.976  -> width~2.136px
+iter 4: cx=418.228 cy=424.468 rx=385.750 ry=372.086 rot=-88.9878  ink/arc=2.0857 core=0.976  -> width~2.136px
+  <ellipse cx="418.228" cy="424.468" rx="385.750" ry="372.086" transform="rotate(-88.9878 418.228 424.468)"/>

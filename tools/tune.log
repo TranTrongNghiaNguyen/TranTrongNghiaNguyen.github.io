@@ -1,0 +1,15 @@
+logo-emblem.svg: 18 knobs
+  start ink_mae = 0.008047
+  round 0 1:ellipse:#071956.stroke-width     x0.9   -> 0.007883
+  round 0 1:ellipse:#071956.opacity          x0.95  -> 0.007878
+  round 0 3:ellipse:#a2b4d1.stroke-width     x0.95  -> 0.007876
+  round 0 4:g:url(#fanRed).stroke-width      x0.8   -> 0.007717
+  round 0 6:g:url(#flowBlue).stroke-width    x1.25  -> 0.007649
+  round 0 7:path:#090e4b.stroke-width        x1.25  -> 0.007363
+  round 0 grad:fanRed.stop-opacity           x0.95  -> 0.007361
+  round 0 grad:fanBlue.stop-opacity          x1.25  -> 0.007361
+  round 0 grad:flowBlue.stop-opacity         x1.12  -> 0.007349
+  round 1 1:ellipse:#071956.stroke-width     x1.05  -> 0.007336
+  round 2: no further improvement
+  final ink_mae = 0.007336
+  (dry run; pass --apply to write)

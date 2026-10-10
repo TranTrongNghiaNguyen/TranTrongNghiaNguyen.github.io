@@ -1,0 +1,12 @@
+usage: tune_text.py [-h] [--svg SVG]
+                    [--target {emblem,full,emblem-raster,full-raster}] --block
+                    BLOCK [--x X] [--apply]
+
+options:
+  -h, --help            show this help message and exit
+  --svg SVG
+  --target {emblem,full,emblem-raster,full-raster}
+  --block BLOCK         index:y0,y1 for the <text> element at that index
+                        (0-based, document order)
+  --x X
+  --apply

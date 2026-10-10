@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - Nguyễn Trần Trọng Nghĩa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Cấu trúc Typography và Layout cơ bản */
+        body { font-family: 'EB Garamond', serif; font-size: 1.25rem; line-height: 1.8; color: #2c2c2c; max-width: 800px; margin: 0 auto; padding: 60px 20px; background-color: #FCFCFC; }
+        header { margin-bottom: 70px; }
+        .header-title { display: flex; align-items: center; margin-bottom: 30px; }
+        .header-title img { border-radius: 50%; width: 90px; height: 90px; object-fit: cover; margin-right: 20px; }
+        .header-title-text { font-family: 'Inter', sans-serif; font-size: 1.3em; color: #111; }
+        .header-title-text strong { font-weight: 700; }
+        .header-title-subtitle { font-family: 'EB Garamond', serif; font-size: 0.9em; color: #666; margin-left: 10px; font-style: italic; }
+        .header-title a { text-decoration: none; color: inherit; display: flex; align-items: center; }
+        
+        nav { font-family: 'Inter', sans-serif; border-bottom: 1px solid #e0e0e0; padding-bottom: 15px; display: flex; gap: 25px; align-items: center; }
+        nav a { text-decoration: none; color: #0077b6; font-weight: 700; font-size: 1.1em; letter-spacing: -0.02em; display: flex; align-items: center; }
+        nav a:hover { color: #005f92; }
+        .svg-icon { width: 14px; height: 14px; margin-left: 5px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+        .more-icon { width: 24px; height: 24px; fill: currentColor; margin-top: 2px; cursor: pointer; }
+        
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; background-color: #0077b6; min-width: 320px; box-shadow: 0px 10px 25px rgba(0,0,0,0.15); z-index: 1; top: 100%; left: 0; padding: 10px 0; text-align: left; }
+        .dropdown-header { color: #FFFFFF; font-weight: 800; font-size: 1.05em; padding: 12px 24px 6px 24px; display: block; }
+        .dropdown-content a { color: #FFFFFF; padding: 6px 24px; text-decoration: none; display: block; font-weight: 700; font-size: 0.95em; border: none; }
+        .dropdown-content a:hover { background-color: #005f92; color: #FFFFFF; }
+        .dropdown:hover .dropdown-content { display: block; }
+
+        /* Cấu trúc riêng cho trang Blogs (Blog Feed) */
+        h1.page-title { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 2.4em; margin-bottom: 5px; margin-top: 0; letter-spacing: -0.03em; }
+        .short-hr { border: 0; border-top: 1px solid #111; width: 45px; margin: 0 0 40px 0; float: left; }
+        .short-hr::after { content: ""; clear: both; display: table; }
+        
+        .post { margin-bottom: 80px; clear: both; }
+        .post h2 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 2.2em; margin-bottom: 5px; margin-top: 0; letter-spacing: -0.03em; line-height: 1.2; }
+        .post h2 a { text-decoration: none; color: #111; }
+        .post h2 a:hover { color: #0077b6; }
+        
+        .post-content p { margin-top: 20px; margin-bottom: 20px; text-align: justify; }
+        
+        .post-meta { font-family: 'Inter', sans-serif; font-size: 0.85em; color: #555; margin-top: 25px; margin-bottom: 0; display: flex; align-items: center; gap: 15px; flex-wrap: wrap; font-weight: 400; }
+        .meta-item { display: flex; align-items: center; }
+        .meta-item a { color: #0077b6; text-decoration: none; font-weight: 700; }
+        .meta-item a:hover { text-decoration: underline; }
+
+        .post-img { width: 100%; height: 350px; object-fit: cover; border-radius: 4px; margin: 15px 0; border: 1px solid #e0e0e0; }
+        .post-excerpt { text-align: justify; margin-bottom: 15px; color: #444; }
+        
+        /* --- Responsive Menu (Breakpoint Toggle) --- */
+        .desktop-only { display: inline-block; }
+        .mobile-only { display: none; }
+
+       /* --- KỸ THUẬT THU GỌN TỊNH TIẾN (PROGRESSIVE COLLAPSE) --- */
+        .more-menu { display: none; } 
+        .in-more-1, .in-more-2, .in-more-3, .in-more-4 { display: none; } 
+
+        /* Mức 1: Dưới 980px -> Chỉ cất mục "People" */
+        @media screen and (max-width: 980px) {
+            .nav-col-1 { display: none !important; }
+            .more-menu { display: inline-block !important; }
+            .in-more-1 { display: block !important; }
+        }
+        
+        /* Mức 2: Dưới 840px -> Cất thêm mục "Publications" */
+        @media screen and (max-width: 840px) {
+            .nav-col-2 { display: none !important; }
+            .in-more-2 { display: block !important; }
+        }
+        
+        /* Mức 3: Dưới 740px -> Cất thêm mục "Blogs" */
+        @media screen and (max-width: 740px) {
+            .nav-col-3 { display: none !important; }
+            .in-more-3 { display: block !important; }
+        }
+        
+        /* Mức 4: Dưới 640px -> Cất thêm mục "Achievements" */
+        @media screen and (max-width: 640px) {
+            .nav-col-4 { display: none !important; }
+            .in-more-4 { display: block !important; }
+            nav { flex-wrap: wrap; row-gap: 15px; } 
+        }
+        /* --- KỸ THUẬT READ MORE / READ LESS --- */
+        .post-content-text {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4; /* Giới hạn chính xác 4 dòng */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: max-height 0.3s ease;
+            text-align: justify;
+            color: #444;
+            line-height: 1.8;
+        }
+        .post-content-text.expanded {
+            -webkit-line-clamp: unset;
+            display: block;
+        }
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: #0077b6;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 5px 0 0 0;
+            margin-bottom: 15px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95em;
+            display: inline-block;
+        }
+        .read-more-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <a href="index.html">
+                <img src="airfoil - copy.png" alt="Profile Picture">
+                <div class="header-title-text">
+                    <strong>Nguyen Tran Trong Nghia</strong> — <span class="header-title-subtitle">Aerospace Engineering & Applied Aerodynamics</span>
+                </div>
+            </a>
+        </div>
+        
+        <nav>
+            <a href="about.html">About</a>
+            
+            <div class="dropdown">
+                <a href="javascript:void(0)">Research <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                <div class="dropdown-content">
+                    <a href="general.html#aerodynamics">Aerodynamics</a>
+                    <a href="general.html#cfd">Computational Fluid Dynamics</a>
+                    <a href="general.html#propulsion">Propulsion Systems</a>
+                </div>
+            </div>
+            
+            <a href="https://saemiller.com/flow/SAEMiller_Comp_Calc.html">Calcs</a>
+            
+            <div class="dropdown">
+                <a href="javascript:void(0)">Curiosity <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                <div class="dropdown-content">
+                    <a href="math.html">Engineering Mathematics & Calculus</a>
+                    <a href="aerodynamics.html">Aerodynamics & Aerospace Engineering</a>
+                    <a href="cfd.html">CFD & Numerical Methods</a>
+                    <a href="fluid.html">Fluid Mechanics & Viscous Flow</a>
+                    <a href="thermo.html">Thermodynamics, Heat & Propulsion</a>
+                </div>
+            </div>
+            
+            <a href="achievements.html" class="nav-col-4">Achievements</a>
+            <a href="blogs.html" class="nav-col-3">Blogs</a>
+
+            <div class="dropdown nav-col-2">
+                <a href="javascript:void(0)">Publications <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                <div class="dropdown-content">
+                    <a href="javascript:void(0)">– Journal Publications</a>
+                    <a href="conference paper with presentations.html">– Conference Papers with Presentations</a>
+                    <a href="javascript:void(0)">– Conference Presentations</a>
+                    <a href="javascript:void(0)">– Posters</a>
+                    <a href="javascript:void(0)">– Media</a>
+                </div>
+            </div>
+
+            <div class="dropdown nav-col-1">
+                <a href="javascript:void(0)">People <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                <div class="dropdown-content">
+                    <a href="javascript:void(0)">– Current and Previous</a>
+                    <a href="javascript:void(0)">– Select Photographs</a>
+                    <a href="javascript:void(0)">– Letter of Recommendation</a>
+                </div>
+            </div>
+
+            <div class="dropdown more-menu">
+                <a href="javascript:void(0)">
+                    <svg class="more-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="8" cy="12" r="1.5" fill="#FAFAFA"></circle><circle cx="12" cy="12" r="1.5" fill="#FAFAFA"></circle><circle cx="16" cy="12" r="1.5" fill="#FAFAFA"></circle></svg>
+                </a>
+                <div class="dropdown-content">
+                    <a href="achievements.html" class="in-more-4">– Achievements</a>
+                    <a href="blogs.html" class="in-more-3">– Blogs</a>
+                    
+                    <span class="dropdown-header in-more-2" style="margin-top: 10px;">Publications</span>
+                    <a href="javascript:void(0)" class="in-more-2">– Journal Publications</a>
+                    <a href="conference paper with presentations.html" class="in-more-2">– Conference Papers with Presentations</a>
+                    <a href="javascript:void(0)" class="in-more-2">– Conference Presentations</a>
+                    <a href="javascript:void(0)" class="in-more-2">– Posters</a>
+                    <a href="javascript:void(0)" class="in-more-2">– Media</a>
+                    
+                    <span class="dropdown-header in-more-1" style="margin-top: 10px;">People</span>
+                    <a href="javascript:void(0)" class="in-more-1">– Current and Previous</a>
+                    <a href="javascript:void(0)" class="in-more-1">– Select Photographs</a>
+                    <a href="javascript:void(0)" class="in-more-1">– Letter of Recommendation</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title">Personal Journeys & Academic Logs</h1>
+        <hr class="short-hr" style="margin-bottom: 60px;">
+
+        <!-- BÀI 1: CÂU CHUYỆN ĐỘNG LỰC TỪ PHIM -->
+        <article class="post">
+            <h2><a href="javascript:void(0)">Dành cho những trái tim can đảm dám cho phép mình bắt đầu</a></h2>
+            <img src="Screenshot 2026-05-28 232610.png" alt="Tiểu Yêu Quái" class="post-img">
+            <div class="post-content">
+                <div class="post-content-text">
+                    Đoạn cuối bộ phim Tiểu Yêu Quái Núi Lãng Lãng có câu này: "Dành cho những trái tim can đảm dám cho phép mình bắt đầu". Đây là một câu chuyện cho những người bình thường. Một con heo tinh bình thường, một con cóc tinh bình thường, một con chồn tinh bình thường và một con khỉ tinh cũng bình thường quyết định đi Tây thiên thỉnh kinh. Trong một thế giới mà người hùng nào cũng "có gốc", khi Như Lai và Tôn Ngộ Không đã quen nhau cách đây 500 năm trước, Trư Bát Giới và Sa Tăng đều là thần tiên trên trời, còn Đường Tăng lại vốn là đệ tử thứ hai của Phật Tổ, những yêu quái và cả ước mơ đi Tây thiên của chúng trông thật bé nhỏ và... hoang đường. Nhưng chúng vẫn tin và vẫn đi. Tất nhiên vì chẳng có võ công cao cường như Tôn Ngộ Không, nên đánh một con yêu quái cũng chật vật vô cùng, đến mức dù dồn hết sức đi nữa cũng thiếu chút là mất mạng. Có người bảo là phim thực tế quá, nobody thì sẽ quay về làm nobody thôi, sao mà so được với thầy trò Đường Tăng gốc gác hẳn hoi. Nhưng chẳng lẽ chỉ vì không bằng được thầy trò Đường Tăng mà không được phép có ước mơ sao? Thật ra, thầy trò Đường Tăng, xuất phát điểm của xuất phát điểm, của bao nhiêu kiếp trước đó, cũng đã chỉ là nobody thôi mà. Trong phim Young Sheldon có đoạn một ông giáo già buồn bã nói rằng: "Ước mơ cả đời của tôi là giải Nobel và tôi chẳng đạt được nó." Nhưng giải Nobel một năm chỉ trao cho vài người, còn đóng góp cho khoa học, nghệ thuật thì cả vạn người, mỗi năm đều làm gì đó. Chẳng lẽ vĩ đại huy hoàng thì mới gọi là đáng sống? Nobel, hay tu tiên là một đích đến nghe rất vĩ đại, nhưng điều đó không có nghĩa những ai không đạt được đã có một cuộc đời bỏ đi. Những con yêu quái bình thường ấy, chúng đã bắt đầu và đi trọn với ước mơ của mình theo cách riêng. Bằng cách nào đó, chúng vẫn được giúp đỡ, từ tình thương yêu của cha mẹ, từ việc có người tin chúng là thầy trò Đường Tăng mà cho đồ ăn. Nếu sống một đời mà còn không cho phép mình bắt đầu, thì sao có chuyện sau này. Thỉnh thoảng mình nghĩ chúng ta rất khắt khe với cuộc đời mình: nghĩ mình phải có một thứ "được cho là vĩ đại", phải có đủ quyền lực, đủ địa vị, đủ khả năng, đủ tài chính, mới được phép bắt đầu sống. Nhưng sống là sống thôi. Cuộc đời mình luôn bắt đầu từ bây giờ. Nên đây là một bộ phim cho những người bình thường. Sống một cuộc đời bình thường và vẫn dám bắt đầu một điều gì đó, là đã sống trọn vẹn.
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+            </div>
+            <div class="post-meta">
+                <span class="meta-item">Nguồn: <strong>Hoài (Facebook)</strong></span>
+                <span class="meta-item">Chuyên mục: <a href="javascript:void(0)" style="margin-left:5px;">Inspiration & Life</a></span>
+            </div>
+        </article>
+
+        <!-- BÀI 2: ĐAM MÊ CƠ LƯU CHẤT -->
+        <article class="post">
+            <hr class="short-hr">
+            <h2><a href="javascript:void(0)">Cơ lưu chất, Phương trình Navier-Stokes và Vẻ đẹp của dòng chảy</a></h2>
+            <img src="Screenshot 2026-05-28 232839.png" alt="Kármán vortex street" class="post-img">
+            <div class="post-content">
+                <div class="post-content-text">
+                    Hình như sinh viên Bách Khoa nào cũng học môn “Cơ lưu chất”. Trái đất là một thế giới nước, với đại dương, biển, sông, hồ. Điều mà nước làm tốt nhất là chảy. Cơ lưu chất cung cấp các mô hình toán học giúp ta hiểu nước chảy như thế nào. Và dĩ nhiên ngoài nước thì cơ lưu chất xử luôn tất cả các loại chất lỏng. Mình ấn tượng môn Cơ lưu chất vì những điểm sau. Thứ nhất, cái tên nó hay (hơn những môn khác). Thứ hai, môn này thi trắc nghiệm, làm sai câu nào thì bị trừ điểm còn làm đúng thì có thể trên 10 điểm. Thứ ba, môn này có làm thí nghiệm... Thầy dạy môn này là thầy Lê Song Giang; thầy này đẹp trai vô cùng, và có tài tính toán trong đầu không cần xài máy tính... Cơ lưu chất không những thú vị, mà còn vô vàn ứng dụng. Nó đã được ứng dụng trong nhiều lĩnh vực khác nhau, bao gồm kỹ thuật cơ khí, hàng không vũ trụ, xây dựng dân dụng, kỹ thuật hóa học và y sinh, cũng như địa vật lý, hải dương học, khí tượng học, vật lý thiên văn và sinh học. Cơ lưu chất và cơ vật rắn là hai nhánh chính của cơ học môi trường liên tục (continuum mechanics), vì vậy chúng có nhiều điểm tương đồng với nhau. Nói tới cơ lưu chất thì phải nói tới phương trình Navier-Stokes. Trong bộ bảy bài toán thiên niên kỷ mà Viện Toán học Clay tặng giải thưởng 1 triệu đô la cho mỗi bài thì PT Navier-Stokes cũng có mặt. Hình minh họa chèn trong bài viết là dãy xoáy Kármán (Kármán vortex street). Đây là hiện tượng các xoáy được tạo ra luân phiên ở phía sau một vật thể (ví dụ trụ tròn) khi dòng chất lưu chảy qua vật đó ở một dải số Reynolds nhất định. Là người nghiện phương pháp Phần Tử Hữu Hạn, mình đã dùng nó để giải PT Navier-Stokes và thu được dãy xoáy Karman trong cái máy tính laptop ngay trước mặt mình. Đó là điều thú vị của làm mô phỏng. Đằng sau cái mô phỏng này là ma trận, trị riêng, div, grad, curl v.v. Hầu như môn học nào cũng có cái đẹp. Con người thì thích cái đẹp. Cứ tìm cái đẹp mà học. Đẹp thì luôn có ứng dụng.
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+            </div>
+            <div class="post-meta">
+                <span class="meta-item">Nguồn: <strong>Sưu tầm (#toanhochanphuong)</strong></span>
+                <span class="meta-item">Chuyên mục: <a href="javascript:void(0)" style="margin-left:5px;">Fluid Mechanics & CFD</a></span>
+            </div>
+        </article>
+
+        <!-- BÀI 3: KHÓ KHĂN THỬ THÁCH ĐỂ LẠI GÌ -->
+        <article class="post">
+            <hr class="short-hr">
+            <h2><a href="javascript:void(0)">Khó khăn thử thách để lại gì?</a></h2>
+            <img src="Screenshot 2026-05-28 233137.png" alt="Mầm sống" class="post-img">
+            <div class="post-content">
+                <div class="post-content-text">
+                    “Con đường ngắn nhất để thoát khỏi gian nan là đi xuyên qua nó” - Khuyết danh. Một chàng trai đang gặp nhiều khó khăn, anh bị tổn thương và trở nên mất niềm tin vào cuộc sống. Anh đến hỏi một ông già thông thái. Nghe kể xong, ông chẳng nói lời nào mà chỉ im lặng đặt chiếc nồi lên bếp, đổ vào nồi một ít nước và cho vào một củ cà rốt, một cục muối và một quả trứng. Sau khi đun sôi, ông mở nắp và trầm ngâm im lặng nhìn anh ta. Sau một hồi ông bắt đầu nói: - Ai sống trên đời cũng phải trải qua khó khăn, thử thách cả. Nhưng điều quan trọng là sau đó mọi việc sẽ như thế nào? Hãy nhìn xem cục muối với vẻ rắn chắc bên ngoài nhưng khi bỏ vào nước là tan, củ cà rốt cứng cáp khi bị nóng cũng trở nên mềm đi. Còn quả trứng tuy mỏng manh nhưng khi qua nước sôi nóng bỏng lại trở nên cứng cáp hơn. “Một thử thách cũng có thể trở thành một cơ hội vàng khi ta biết nắm bắt và xoay chuyển nó” - Khuyết danh. Nghịch cảnh không phải để ngăn cản mà là để vượt qua.
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+            </div>
+            <div class="post-meta">
+                <span class="meta-item">Nguồn: <strong>Sưu tầm</strong></span>
+                <span class="meta-item">Chuyên mục: <a href="javascript:void(0)" style="margin-left:5px;">Mindset & Resilience</a></span>
+            </div>
+        </article>
+
+        <!-- BÀI 4: CÂU CHUYỆN XÂY CẦU BROOKLYN -->
+        <article class="post">
+            <hr class="short-hr">
+            <h2><a href="javascript:void(0)">Chuyện xây cầu Brooklyn: Phép lạ của ngành kỹ thuật xây dựng</a></h2>
+            <img src="Screenshot 2026-05-28 233242.png" alt="Brooklyn Bridge" class="post-img">
+            <div class="post-content">
+                <div class="post-content-text">
+                    “Không bao giờ, không bao giờ, không bao giờ được đầu hàng” - Winston Churchill. Cầu Brooklyn bắc ngang con sông nằm giữa hai thành phố Manhattan và Brooklyn phải nói là phép lạ của ngành xây dựng. Vào năm 1883, một kỹ sư giàu óc sáng tạo tên là John Roebling, lòng đầy hứng khởi khi nảy ra ý kiến xây một cây cầu thật ngoạn mục bắc ngang hai thành phố này. Tuy nhiên, khi nghe ông trình bày ý tưởng táo bạo đó không một chuyên gia về cầu đường nào chịu hợp tác với ông. Họ cho rằng ông điên và bảo ông hãy quên điều đó đi vì không thể nào làm được cây cầu như vậy. Không nản lòng, ông về nhà thuyết phục con trai mình là Washington cũng là một kỹ sư đầy tiềm năng, rằng có thể xây được cây cầu như vậy. Cả hai cha con cùng ấp ủ ý muốn hoàn thành cây cầu và bàn luận về cách vượt qua mọi trở ngại. Dẫu sao, các ngân hàng cũng tin họ và đồng ý bỏ tiền ra cho dự án xây cầu. Hết sức phấn khích và nhiệt thành, họ tuyển nhân công và bắt đầu xây cây cầu trong mơ của mình. Dự án tiến hành được vài tháng thì tai họa ập đến. Một tai nạn ngay tại công trường đã cướp đi chính sinh mạng ông John Roebling và con trai ông bị thương nặng ở đầu. Washington sau tai nạn ấy đã không thể đi đứng và nói được. Ai cũng nghĩ là dự án cuối cùng sẽ tàn thành mây khói vì chỉ có cha con Roebling là những người duy nhất hiểu được cách xây chiếc cầu này. Mặc dù không thể đi lại và nói chuyện, đầu óc Washington Roebling vẫn còn rất tinh anh. Một hôm, đang nằm trong bệnh viện, trong đầu ông chợt nghĩ ra cách “nói chuyện” với người khác. Vận động duy nhất của cơ thể ông hiện thời là nhúc nhích một ngón tay và ông nghĩ ra một bộ mã truyền tin. Với bộ mã này, ông dùng ngón tay còn chuyển động được gõ ra ý nghĩ của mình vào tay vợ mình để thông tin với vợ những gì cần nói với các kỹ sư vẫn đang tiếp tục xây dựng cây cầu. Trong suốt 13 năm, Washington đã ra lệnh bằng ngón tay duy nhất còn chuyển động của mình cho đến khi hoàn thành cây cầu Brooklyn kỳ vĩ mà chúng ta nhìn thấy ngày hôm nay. “Bạn sẽ khám phá ra chính mình một bậc cao hơn sau mỗi lần vượt qua nghịch cảnh” - Thomas Edison. Dù không thể đi lại và nói chuyện, Washington đã không từ bỏ để hoàn thành Cầu Brooklyn.
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+            </div>
+            <div class="post-meta">
+                <span class="meta-item">Nguồn: <strong>Sưu tầm</strong></span>
+                <span class="meta-item">Chuyên mục: <a href="javascript:void(0)" style="margin-left:5px;">Engineering History & Determination</a></span>
+            </div>
+        </article>
+
+    </main>
+
+    <script>
+        function toggleReadMore(btn) {
+            const content = btn.previousElementSibling;
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                btn.innerText = 'Read More';
+            } else {
+                content.classList.add('expanded');
+                btn.innerText = 'Read Less';
+            }
+        }
+    </script>
+</body>
+</html>
